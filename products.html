@@ -61,7 +61,7 @@
     (async () => {
       document.querySelector('#footer-text').innerText += new Date().getFullYear();
 
-      const menuData = await fetchCSV(`${window.location.origin}/anawalt-cc/data/catalog.csv`);
+      const menuData = await fetchCSV(`${window.location.origin}/clearance-catalog/data/catalog.csv`);
       const menuGroup = document.querySelector("#anawalt-menu-group");
 
       if (menuData) {
@@ -71,7 +71,7 @@
       }
 
       const file = localStorage.getItem('csvFile');
-      const data = await fetchCSV(`${window.location.origin}/anawalt-cc/data/${file}`);
+      const data = await fetchCSV(`${window.location.origin}/clearance-catalog/data/${file}`);
       const mainRow = document.querySelector("#main-row");
 
       if (data) {
