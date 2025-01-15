@@ -42,7 +42,7 @@ function productCardGenerator(data) {
     newDiv.classList.add('col', 'mb-5');
     newDiv.innerHTML = `
         <div class="card h-100 text-center">
-            <img loading="lazy" class="card-img-top" src="${window.location.origin}/anawalt-cc/img/${finalImg}" alt="Card image">
+            <img loading="lazy" class="card-img-top" src="${window.location.origin}/clearance-catalog/img/${finalImg}" alt="Card image">
 	    <div class="card-header">
 	        <h4 class="card-title">${data.Description}</h4>
 		</div>
@@ -73,7 +73,7 @@ function categoryCardGenerator(data) {
     newDiv.classList.add('col', 'mb-5');
     newDiv.innerHTML = `
         <div class="card h-100">
-            <img loading="lazy" class="card-img-top" src="${window.location.origin}/anawalt-cc/img/category/${finalImg}" alt="Card image">
+            <img loading="lazy" class="card-img-top" src="${window.location.origin}/clearance-catalog/img/category/${finalImg}" alt="Card image">
             <div class="card-body">
                 <h4 class="card-title">${data.name}</h4>
                 <a href="#" class="btn btn-success" data-src="${data.file}">View Products</a>
@@ -97,7 +97,7 @@ function missingProducts(){
     const newDiv = document.createElement('div');
     newDiv.classList.add('text-center');
     newDiv.innerHTML = `
-        <img loading="lazy" width="125px" src="${window.location.origin}/anawalt-cc/img/system/warning.png" alt="warning icon">
+        <img loading="lazy" width="125px" src="${window.location.origin}/clearance-catalog/img/system/warning.png" alt="warning icon">
         <h2>No products available!</h2>
     `
 
