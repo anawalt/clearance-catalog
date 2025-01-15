@@ -53,7 +53,7 @@
       (async ()=>{
         document.querySelector('#footer-text').innerText += new Date().getFullYear();
 
-        const data = await fetchCSV(`${window.location.origin}/anawalt-cc/data/catalog.csv`);
+        const data = await fetchCSV(`${window.location.origin}/clearance-catalog/data/catalog.csv`);
         const mainRow = document.querySelector("#main-row");
         
         if (data) {
