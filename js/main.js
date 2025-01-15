@@ -41,24 +41,39 @@ function productCardGenerator(data) {
     const newDiv = document.createElement('div');
     newDiv.classList.add('col', 'mb-5');
     newDiv.innerHTML = `
-        <div class="card h-100 text-center">
+        
+        <div class="card h-100">
+            
             <img loading="lazy" class="card-img-top" src="${window.location.origin}/clearance-catalog/img/${finalImg}" alt="Card image">
-	    <div class="card-header">
-	        <h4 class="card-title">${data.Description}</h4>
-		</div>
+            <div class="card-img-overlay" style="text-align: right">
+                <span class="p-2 fw-bolder rounded" style="color: #fff; background-color: #198754;">${Math.floor(100 - (data.new_retail/data.old_retail) * 100)}% OFF</span>
+            </div>
+            <div class="card-header text-center">
+                <h4 class="card-title">${data.Description}</h4>
+            </div>
             <div class="card-body">
-                
-		<div class="row">
-		    <div class="col">
-			<p class="card-text fw-bold mb-1">SKU</p>
- 		    	<p class="lead">${data.SKU}</p>
-		    </div>
-	            <div class="col">
-			<p class="card-text fw-bold mb-1">Quantity</p>
- 		    	<p class="lead">${data.QOH}</p>
-		    </div>		
-		</div>
-                <h3>Price : $${data.Retail}</h3>
+                <div class="row cols-row-2 text-center">
+                    <div class="col">
+                    <p class="card-text fw-bold mb-1">SKU</p>
+                        <p class="lead">${data.SKU}</p>
+                    </div>
+                        <div class="col">
+                    <p class="card-text fw-bold mb-1">Quantity</p>
+                        <p class="lead">${data.QOH}</p>
+                    </div>
+                </div>
+                <hr />
+                <div class="row cols-row-2 align-items-center">
+                    <div class="col">
+                        <h6 class="fw-normal" style="margin-bottom: 0;">WAS</h6>    
+                        <h5 class="fw-bold" style="line-height: 1; text-decoration: line-through">$${data.old_retail}${data.unit}</h5>
+                    </div>
+                    <div class="col" style="color: #198754;">
+                        <h4 class="fw-normal" style="margin-bottom: 0;">NOW</h4>
+                        <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail}${data.unit}</h3>
+                    </div>
+                </div>
+            
             </div>
         </div>
     `
