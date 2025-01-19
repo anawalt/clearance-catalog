@@ -34,9 +34,44 @@ async function fetchCSV(url) {
     return dataArr;
 }
 
+function checkDiscount(oldPrice,newPrice){
+    diff = oldPrice - newPrice;
+
+    return (diff == 0)? false : true;
+}
 
 function productCardGenerator(data) {
     let finalImg = !data.img ? "system/placeholder.jpg" : data.img;
+
+    discountBadge = `
+        <div class="card-img-overlay" style="text-align: right">
+            <span class="p-2 fw-bolder rounded" style="color: #fff; background-color: #198754;">${Math.floor(100 - (data.new_retail/data.old_retail) * 100)}% OFF</span>
+        </div>
+    `
+    discountPrice = `
+        <div class="row cols-row-2 align-items-center text-center">
+            <div class="col">
+                <h6 class="fw-normal" style="margin-bottom: 0;">WAS</h6>    
+                <h5 class="fw-bold" style="line-height: 1; text-decoration: line-through">$${data.old_retail}${data.unit}</h5>
+            </div>
+            <div class="col" style="color: #198754;">
+                <h4 class="fw-normal" style="margin-bottom: 0;">NOW</h4>
+                <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail}${data.unit}</h3>
+            </div>
+        </div>
+    `
+    regularPrice = `
+        <div class="row">
+            <div class="col text-center" style="color: #198754;">
+                <h4 class="fw-normal" style="margin-bottom: 0;">PRICE</h4>
+                <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail}${data.unit}</h3>
+            </div>
+        </div>
+    `
+
+    discount = checkDiscount(data.old_retail, data.new_retail);
+    badge = discount ? discountBadge : '';
+    price = discount ? discountPrice : regularPrice;
 
     const newDiv = document.createElement('div');
     newDiv.classList.add('col', 'mb-5');
@@ -45,9 +80,7 @@ function productCardGenerator(data) {
         <div class="card h-100">
             
             <img loading="lazy" class="card-img-top" src="${window.location.origin}/clearance-catalog/img/${finalImg}" alt="Card image">
-            <div class="card-img-overlay" style="text-align: right">
-                <span class="p-2 fw-bolder rounded" style="color: #fff; background-color: #198754;">${Math.floor(100 - (data.new_retail/data.old_retail) * 100)}% OFF</span>
-            </div>
+            ${badge}
             <div class="card-header text-center">
                 <h4 class="card-title">${data.Description}</h4>
             </div>
@@ -63,17 +96,7 @@ function productCardGenerator(data) {
                     </div>
                 </div>
                 <hr />
-                <div class="row cols-row-2 align-items-center">
-                    <div class="col">
-                        <h6 class="fw-normal" style="margin-bottom: 0;">WAS</h6>    
-                        <h5 class="fw-bold" style="line-height: 1; text-decoration: line-through">$${data.old_retail}${data.unit}</h5>
-                    </div>
-                    <div class="col" style="color: #198754;">
-                        <h4 class="fw-normal" style="margin-bottom: 0;">NOW</h4>
-                        <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail}${data.unit}</h3>
-                    </div>
-                </div>
-            
+                ${price}
             </div>
         </div>
     `
