@@ -25,7 +25,7 @@ async function fetchCSV(url) {
         let obj = {};
         const temp = rows[i].trim().split(",");
 
-        if(temp[0] == null){
+        if(temp[0] == undefined || temp[0] == null){
             continue
         }
         
