@@ -56,11 +56,11 @@ function productCardGenerator(data) {
         <div class="row cols-row-2 align-items-center text-center">
             <div class="col">
                 <h6 class="fw-normal" style="margin-bottom: 0;">WAS</h6>    
-                <h5 class="fw-bold" style="line-height: 1; text-decoration: line-through">$${data.old_retail}${data.unit}</h5>
+                <h5 class="fw-bold" style="line-height: 1; text-decoration: line-through">$${data.old_retail} ${data.unit}</h5>
             </div>
             <div class="col" style="color: #198754;">
                 <h4 class="fw-normal" style="margin-bottom: 0;">NOW</h4>
-                <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail}${data.unit}</h3>
+                <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail} ${data.unit}</h3>
             </div>
         </div>
     `
@@ -68,7 +68,7 @@ function productCardGenerator(data) {
         <div class="row">
             <div class="col text-center" style="color: #198754;">
                 <h4 class="fw-normal" style="margin-bottom: 0;">PRICE</h4>
-                <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail}${data.unit}</h3>
+                <h3 class="fw-bold" style="line-height: 1;">$${data.new_retail} ${data.unit}</h3>
             </div>
         </div>
     `
