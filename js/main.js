@@ -25,6 +25,10 @@ async function fetchCSV(url) {
         let obj = {};
         const temp = rows[i].trim().split(",");
 
+        if(temp[0] == null){
+            continue
+        }
+        
         for (let y = 0; y < header.length; y++) {
             obj[header[y]] = temp[y];
         }
