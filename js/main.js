@@ -77,6 +77,18 @@ function productCardGenerator(data) {
     badge = discount ? discountBadge : '';
     price = discount ? discountPrice : regularPrice;
 
+    let qtyUnit;
+
+    if(data.unit == 'EA'){
+        if(data.QOH > 1){
+            qtyUnit = PCS 
+        }else{
+            qtyUnit = PC
+        }
+    }else{
+        qtyUnit = data.unit
+    }
+
     const newDiv = document.createElement('div');
     newDiv.classList.add('col', 'mb-5');
     newDiv.innerHTML = `
@@ -96,7 +108,7 @@ function productCardGenerator(data) {
                     </div>
                         <div class="col">
                     <p class="card-text fw-bold mb-1">Quantity</p>
-                        <p class="lead">${data.QOH}</p>
+                        <p class="lead">${data.QOH}${qtyUnit}</p>
                     </div>
                 </div>
                 <hr />
