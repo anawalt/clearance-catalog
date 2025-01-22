@@ -81,9 +81,9 @@ function productCardGenerator(data) {
 
     if(data.unit == 'EA'){
         if(data.QOH > 1){
-            qtyUnit = PCS 
+            qtyUnit = 'PCS' 
         }else{
-            qtyUnit = PC
+            qtyUnit = 'PC'
         }
     }else{
         qtyUnit = data.unit
