@@ -48,7 +48,7 @@ function productCardGenerator(data) {
     let finalImg = !data.img ? "system/placeholder.jpg" : data.img;
 
     discountBadge = `
-        <div class="card-img-overlay" style="text-align: right height:100px">
+        <div class="card-img-overlay" style="text-align: right; height:100px;">
             <span class="p-2 fw-bolder rounded" style="color: #fff; background-color: #198754;">${Math.floor(100 - (data.new_retail/data.old_retail) * 100)}% OFF</span>
         </div>
     `
