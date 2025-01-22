@@ -108,7 +108,7 @@ function productCardGenerator(data) {
                     </div>
                         <div class="col">
                     <p class="card-text fw-bold mb-1">Quantity</p>
-                        <p class="lead">${data.QOH}${qtyUnit}</p>
+                        <p class="lead">${data.QOH} ${qtyUnit}</p>
                     </div>
                 </div>
                 <hr />
