@@ -30,6 +30,43 @@
 </head>
 
 <body>
+  <!-- Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="contactModalLabel">Malibu Contact Information</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-around">
+            <div class="text-center">
+              <div class="text-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                </svg>
+              </div>
+              <div class="fw-bolder">Phone</div>
+              <a href="tel:3104562772" class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><p>310-456-2772</p></a>
+            </div>
+            <div class="text-center">
+              <div class="text-success">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
+                  <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
+                </svg>
+              </div>
+              <div class="fw-bolder">Address</div>
+              <p class="">3730 Cross Creek Rd.<br />Malibu, CA 90265</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="container text-center pb-3">
     <div class="row py-3">
       <div class="col col-md-8 mx-auto" id="page-top">
@@ -45,17 +82,10 @@
           </div>
         </div>
         <hr style="width: 50%; margin-left: auto; margin-right: auto;"/>
-        <div class="d-flex justify-content-center">
-          <div class="me-3">
-            <span class="text-secondary fw-bolder">Phone</span>
-            <a href="tel:3104562772" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><p>310-456-2772</p></a>
-          </div>
-          <div class="ms-3">
-            <span class="text-secondary fw-bolder">Address</span>
-            <p class="text-secondary">3730 Cross Creek Rd.<br />Malibu, CA 90265</p>
-          </div>
+        
+        <div id="anawalt-menu-group">
+          <a href="index.html" class="btn btn-success mx-2 my-2">Home</a>
         </div>
-        <div id="anawalt-menu-group"></div>
       </div>
     </div>
   </div>
